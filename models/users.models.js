@@ -8,7 +8,7 @@ const usersModel = {
     // Méthode pour obtenir la liste de tous les utilisateurs
     getAll: async () => {
         const db = await dbConnection.getDbConnection(); // Obtention de la connexion à la base de données
-        let result = await db.query('SELECT * FROM Users'); // Exécution de la requête SQL pour obtenir tous les utilisateurs
+        let result = await db.query('SELECT * FROM Commentaires'); // Exécution de la requête SQL pour obtenir tous les utilisateurs
         db.close(); // Fermeture de la connexion à la base de données
         return result.recordset; // Renvoie le résultat de la requête sous forme de tableau d'utilisateurs
     },
@@ -37,7 +37,7 @@ const usersModel = {
         // TODO: Ajoutez la logique pour supprimer un utilisateur ici
     }
 };
-console.log("Teste==>" ,result);
+
 // Exportation du modèle pour les opérations sur les utilisateurs
 module.exports = usersModel;
 

@@ -20,18 +20,18 @@ testDb.testDbConnection();
 // // Utilisation de bodyParser pour analyser les données de formulaire
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-// // Routage
+// Routage
 
-// // Import du routeur principal
-// const routerBase = require("./routers/base.router");
+// Import du routeur principal
+const routerBase = require("./routers/base.router");
 
-// // Utilisation du routeur principal pour gérer les chemins de base
-// app.use("", routerBase);
+// Utilisation du routeur principal pour gérer les chemins de base
+app.use("", routerBase);
 
-// // Gestion des erreurs 404
-// app.all("*", (req, res) => {
-//     res.status(404).send("Not Found");
-// });
+// Gestion des erreurs 404
+app.all("*", (req, res) => {
+    res.status(404).send("Not Found");
+});
 
 // // Gestion des erreurs globales
 // app.use((error, req, res, next) => {

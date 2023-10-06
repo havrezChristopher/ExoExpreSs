@@ -1,5 +1,22 @@
 <ul class="collection">
-    <% allUsers.forEach((user) => { %>
-        <li class="collection-item"><%= user.pseudo %></li>
-    <% }) %>
+
+    <% allUsers.forEach((user)=> { %>
+        <li class="collection-item avatar ">
+            <i class="material-icons circle">folder</i>
+            <span class="title">
+                <%= user.Nom %>
+            </span>
+            <p>
+                <%= user.Prenom %> <br>
+            </p>
+            <p>
+                <%= user.Email %><br>
+            </p>
+            <p>
+                <%= user.Message %><br>
+            </p>
+            <% }) %>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+
 </ul>
