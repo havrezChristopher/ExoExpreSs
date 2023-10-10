@@ -4,16 +4,21 @@ const express = require('express');
 const router = express.Router();
 
 // Import des différents routeurs
-const routerUser = require("./users.router");    // Routeur pour les utilisateurs
-// const routerOther = require("./other.router");    // Routeur pour d'autres fonctionnalités
-// const routerMessage = require("./message.router"); // Routeur pour les messages
-// const routerAuth = require("./auth.router");       // Routeur pour l'authentification
+const routerAcceuil = require("./acceuil.router");
+const routerCommentaires = require("./commentaires.router");    // Routeur pour les utilisateurs
+const routerMenu = require("./menu.router");
+const routerContact = require("./contact.router");
+// const routerPageInfo = require("./pageInfo.router");
+
+
 
 // Utilisation des routeurs importés avec des préfixes de route
-router.use("/users", routerUser);         // Toutes les routes sous /users sont gérées par routerUser
-// router.use("/messages", routerMessage);   // Toutes les routes sous /messages sont gérées par routerMessage
-// router.use("/auth", routerAuth);         // Toutes les routes sous /auth sont gérées par routerAuth
-// router.use("/", routerOther);           // Toutes les autres routes sont gérées par routerOther
+router.use("/acceuil", routerAcceuil);
+router.use("/commentaires", routerCommentaires);         // Toutes les routes sous /commentaires sont gérées par routerUser
+router.use("/menu", routerMenu);
+router.use("/contact", routerContact);
+// router.use("/pageInfo", routerPageInfo );
+
 
 // Export du routeur principal
 module.exports = router;

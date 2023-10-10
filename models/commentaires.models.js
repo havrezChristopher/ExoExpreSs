@@ -4,42 +4,45 @@ const dbConnection = require('./db');
 const mssql = require('mssql');
 
 // Définition du modèle pour les opérations sur les utilisateurs
-const usersModel = {
+const commentairesModel = {
     // Méthode pour obtenir la liste de tous les utilisateurs
-    getAll: async () => {
+    getAllCommentaires: async () => {
+        
         const db = await dbConnection.getDbConnection(); // Obtention de la connexion à la base de données
-        let result = await db.query('SELECT * FROM Commentaires'); // Exécution de la requête SQL pour obtenir tous les utilisateurs
+        let result = await db.query('SELECT * FROM Commentaires '); // Exécution de la requête SQL pour obtenir tous les utilisateurs
         db.close(); // Fermeture de la connexion à la base de données
         return result.recordset; // Renvoie le résultat de la requête sous forme de tableau d'utilisateurs
     },
 
     // Méthode pour obtenir un utilisateur spécifique (à implémenter)
-    getOne: async () => {
+    getCommentaires: async () => {
         const db = await dbConnection.getDbConnection(); // Obtention de la connexion à la base de données
         // TODO: Ajoutez la logique pour obtenir un utilisateur spécifique par son ID ici
+      
     },
 
     // Méthode pour ajouter un nouvel utilisateur (à implémenter)
-    addUser: async () => {
+    addCommentaires: async () => {
         const db = await dbConnection.getDbConnection(); // Obtention de la connexion à la base de données
         // TODO: Ajoutez la logique pour ajouter un nouvel utilisateur ici
+    
     },
 
     // Méthode pour mettre à jour un utilisateur existant (à implémenter)
-    updateUser: async () => {
+    updateCommentaires: async () => {
         const db = await dbConnection.getDbConnection(); // Obtention de la connexion à la base de données
         // TODO: Ajoutez la logique pour mettre à jour un utilisateur ici
     },
 
     // Méthode pour supprimer un utilisateur existant (à implémenter)
-    deleteUser: async () => {
+    deleteCommentaires: async () => {
         const db = await dbConnection.getDbConnection(); // Obtention de la connexion à la base de données
         // TODO: Ajoutez la logique pour supprimer un utilisateur ici
     }
 };
 
 // Exportation du modèle pour les opérations sur les utilisateurs
-module.exports = usersModel;
+module.exports = commentairesModel;
 
 //! Ce modèle usersModel contient des méthodes correspondant aux opérations de base sur les utilisateurs, 
 //! telles que l'obtention de la liste de tous les utilisateurs (getAll), l'obtention d'un utilisateur spécifique (getOne), 

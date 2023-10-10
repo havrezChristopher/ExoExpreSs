@@ -1,0 +1,32 @@
+
+    <ul class="collection">
+
+        <% allMenu.forEach((menu)=> { %>
+            <li class="collection-item avatar ">
+                <i class="material-icons circle">folder</i>
+                <span class="title">
+                     <%= menu.Nom %> <br>
+                </span>
+                <p>
+                    <a href="/menu/ <%= menu.ID%>"> lien</a><%= menu.ID%>
+                </p>
+                <p>
+                    <%= menu.Images %><br>
+                </p>
+                <p>
+                    <%= menu.Descriptions %><br>
+                </p>
+                <p>
+                    <%= menu.BreveDescription %><br>
+                </p>
+                <p>
+                    <%= menu.Prix %> $<br>
+                </p>
+                <p>
+                    <%= menu.Allergenes %><br>
+                </p>
+                <% }) %>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+    
+    </ul>

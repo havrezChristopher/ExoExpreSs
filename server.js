@@ -3,22 +3,23 @@ require("dotenv").config(); // Gestion des variables d'environnement
 const testDb = require("./models/db"); // Import du module de test de la base de données
 const express = require("express"); // Import d'Express.js
 const app = express(); // Création de l'application Express
-// const bodyParser = require("body-parser"); // Middleware pour traiter les données de formulaire
+const bodyParser = require("body-parser"); // Middleware pour traiter les données de formulaire
 
 // Gestion de la base de données : Test de la connexion
 testDb.testDbConnection();
 
+
 // Configuration des middlewares d'entrées
 
-// // Configuration du moteur de vue EJS
-// app.set("view engine", "ejs");
-// app.set("views", "./views");
+// Configuration du moteur de vue EJS
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
-// // Utilisation de middleware pour gérer les données JSON dans les requêtes entrantes
-// app.use(express.json());
+//Utilisation de middleware pour gérer les données JSON dans les requêtes entrantes
+app.use(express.json());
 
-// // Utilisation de bodyParser pour analyser les données de formulaire
-// app.use(bodyParser.urlencoded({ extended: true }));
+// Utilisation de bodyParser pour analyser les données de formulaire
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routage
 
@@ -33,13 +34,13 @@ app.all("*", (req, res) => {
     res.status(404).send("Not Found");
 });
 
-// // Gestion des erreurs globales
-// app.use((error, req, res, next) => {
-//     console.log("Error URL : ", req.url);
-//     console.log("Error Message : ", error.message);
-//     res.status(500); // Réponse avec un code de statut 500 pour une erreur interne du serveur
-//     res.send("Internal Server Error"); // Réponse indiquant une erreur interne du serveur
-// });
+// Gestion des erreurs globales
+app.use((error, req, res, next) => {
+    console.log("Error URL : ", req.url);
+    console.log("Error Message : ", error.message);
+    res.status(500); // Réponse avec un code de statut 500 pour une erreur interne du serveur
+    res.send("Internal Server Error"); // Réponse indiquant une erreur interne du serveur
+});
 
 // Démarrage du serveur en écoutant sur le port spécifié dans les variables d'environnement
 

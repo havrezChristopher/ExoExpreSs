@@ -1,27 +1,27 @@
 // Import d'Express.js
 const express = require('express');
 // Création d'un routeur Express spécifique à "routerUser"
-const routerUser = express.Router();
+const routerCommentaires = express.Router();
 // Import du contrôleur "usersController"
-const usersController = require('../controllers/users.controller');
+const commentairesController = require('../controllers/commentaires.controller');
 
 // Route pour obtenir la liste de tous les utilisateurs
-routerUser.get("", usersController.getAll);
+routerCommentaires.get("", commentairesController.getAllCommentaires);
 
 // Route pour obtenir un utilisateur spécifique par son ID
-routerUser.get("/:id", usersController.getOne);
+routerCommentaires.get("/:id", commentairesController.getCommentaires);
 
 // Route pour ajouter un nouvel utilisateur
-routerUser.post("", usersController.addUser);
+routerCommentaires.post("", commentairesController.addCommentaires);
 
 // Route pour mettre à jour un utilisateur par son ID
-routerUser.patch("/:id", usersController.updateUser);
+routerCommentaires.patch("/:id", commentairesController.updateCommentaires);
 
 // Route pour supprimer un utilisateur par son ID
-routerUser.delete("/:id", usersController.deleteUser);
+routerCommentaires.delete("/:id", commentairesController.deleteCommentaires);
 
 // Export du routeur "routerUser"
-module.exports = routerUser;
+module.exports = routerCommentaires;
 
 //! Les commentaires expliquent le but de chaque route dans le routeur routerUser. 
 //! Vous utilisez un contrôleur (usersController) pour gérer les actions associées à ces routes, 

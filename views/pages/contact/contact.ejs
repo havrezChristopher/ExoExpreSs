@@ -1,43 +1,50 @@
 
-<div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-        <label for="first_name">First Name</label>
+<nav>
+  <div class="logo">
+      <a href="#">Mon Logo</a>
+  </div>
+  <ul class="menu">
+      <li><a href="/acceuil">Accueil</a></li>
+      <li><a href="/menu">Nos Burger</a></li>
+      <li><a href="/">Commentaire</a></li>
+      <li><a href="/message-add">Ajouter un Message</a></li>
+      <li><a href="/pageInfo">Contact</a></li>
+  </ul>
+</nav>
+
+<form method="post" action="/message-add">
+  <fieldset>
+      <legend>
+          <h1>Formulaire</h1>
+      </legend>
+      <h3>Ajouter un Messages</h3>
+      <div>
+          <label for="nom">Nom :</label>
+          <input type="text" name="nom" id="nom" required>
       </div>
-      <div class="input-field col s6">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Last Name</label>
+
+      <div>
+          <label for="prenom">Prénoms :</label>
+          <input type="text" name="prenom" id="prenom" required>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-        <label for="disabled">Disabled</label>
+      <div>
+          <label for="note">Entrer un note Sur 10/10:</label>
+          <input type="number" id="note" name="note" min="0" max="10" placeholder="10" />
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
-        <label for="password">Password</label>
+
+      <div>
+          <label for="email">Email :</label>
+          <input type="text" name="email" id="email" required>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
-        <label for="email">Email</label>
+
+      <div>
+          <label for="message">Message :</label>
+          <textarea name="message" id="message" style="resize: none;" cols="30" rows="10" wrap="soft"
+              placeholder="Entrez votre Message ici " required></textarea>
       </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-        This is an inline input field:
-        <div class="input-field inline">
-          <input id="email_inline" type="email" class="validate">
-          <label for="email_inline">Email</label>
-          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-        </div>
+      <div>
+          <button type="submit">Envoyer</button>
       </div>
-    </div>
-  </form>
-</div>
+
+</form>
+</fieldset>

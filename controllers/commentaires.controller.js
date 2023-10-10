@@ -1,47 +1,42 @@
 // Import du modèle de données des utilisateurs
-const usersModel = require("../models/users.models");
+const commentairesModel = require("../models/commentaires.models");
  
 // Définition du contrôleur des utilisateurs
-const usersController = {
+const commentairesController = {
 
     // Méthode pour obtenir la liste de tous les utilisateurs
-    getAll: async (req, res) => {
+    getAllCommentaires: async (req, res) => {
         // Utilisation de la méthode asynchrone "getAll" du modèle pour obtenir tous les utilisateurs
-        let allUsers = await usersModel.getAll();
-//! ****************************Teste pour afficher les utilisateur************************************************************ 
-console.log("Liste des utilisateurs :",allUsers);
-// allUsers.forEach(user => {
-//     console.log(`ID: ${user.ID}, Nom: ${user.Nom}, Prenom: ${user.Prenom}`);
-// });
-//! ****************************Teste pour afficher les utilisateur************************************************************ 
+        let allcommentaires = await commentairesModel.getAllCommentaires();
         // Rendu de la page "getAll.ejs" en passant la liste des utilisateurs comme données
-        res.render("index.ejs", { page: "pages/users/getAll.ejs", allUsers: allUsers });
+        res.render("index.ejs", { page: "pages/commentaires/getAllCommentaires.ejs", allcommentaires: allcommentaires });
         
     },
 
     // Méthode pour obtenir un utilisateur spécifique par son ID
-    getOne: (req, res) => {
+    getCommentaires: async (req, res) => {
         // TODO: Ajoutez la logique pour obtenir un utilisateur spécifique par son ID ici
+
     },
 
     // Méthode pour ajouter un nouvel utilisateur
-    addUser: (req, res) => {
+    addCommentaires: (req, res) => {
         // TODO: Ajoutez la logique pour ajouter un nouvel utilisateur ici
     },
 
     // Méthode pour mettre à jour un utilisateur par son ID
-    updateUser: (req, res) => {
+    updateCommentaires: (req, res) => {
         // TODO: Ajoutez la logique pour mettre à jour un utilisateur par son ID ici
     },
 
     // Méthode pour supprimer un utilisateur par son ID
-    deleteUser: (req, res) => {
+    deleteCommentaires: (req, res) => {
         // TODO: Ajoutez la logique pour supprimer un utilisateur par son ID ici
     }
 };
 
 // Exportation du contrôleur des utilisateurs
-module.exports = usersController;
+module.exports = commentairesController;
 
 //! Ce contrôleur usersController contient des méthodes correspondant aux actions sur les utilisateurs, 
 //! telles que l'obtention de la liste des utilisateurs (getAll), 
