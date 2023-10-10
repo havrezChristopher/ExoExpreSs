@@ -1,31 +1,31 @@
-<form method="post" action="/message-add">
+<form method="post" action="/commentaires/add">
     <fieldset>
         <legend>
             <h1>Formulaire</h1>
         </legend>
         <h3>Ajouter un Messages</h3>
         <div>
-            <label for="nom">Nom :</label>
-            <input type="text" name="nom" id="nom" required>
+            <label for="Nom">Nom :</label>
+            <input type="text" name="Nom" id="nom" required>
         </div>
 
         <div>
-            <label for="prenom">Prénoms :</label>
-            <input type="text" name="prenom" id="prenom" required>
+            <label for="Prenom">Prénoms :</label>
+            <input type="text" name="Prenom" id="Prenom" required>
         </div>
         <div>
-            <label for="note">Entrer un note Sur 10/10:</label>
-            <input type="number" id="note" name="note" min="0" max="10" placeholder="10" />
-        </div>
-
-        <div>
-            <label for="email">Email :</label>
-            <input type="text" name="email" id="email" required>
+            <label for="Note">Entrer un Note Sur 10/10:</label>
+            <input type="number" id="Note" name="Note" min="0" max="10" placeholder="10" />
         </div>
 
         <div>
-            <label for="message">Message :</label>
-            <textarea name="message" id="message" style="resize: none;" cols="30" rows="10" wrap="soft"
+            <label for="Email">Email :</label>
+            <input type="text" name="Email" id="Email" required>
+        </div>
+
+        <div>
+            <label for="Message">Message :</label>
+            <textarea name="Message" id="Message" style="resize: none;" cols="30" rows="10" wrap="soft"
                 placeholder="Entrez votre Message ici " required></textarea>
         </div>
         <div>

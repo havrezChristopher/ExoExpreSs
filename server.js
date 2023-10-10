@@ -19,6 +19,7 @@ app.set("views", "./views");
 app.use(express.json());
 
 // Utilisation de bodyParser pour analyser les données de formulaire
+app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routage
